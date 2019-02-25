@@ -5,7 +5,7 @@ ENV TZ=Asia/Shanghai LANG=C.UTF-8 DEBIAN_FRONTEND=noninteractive
 RUN apt-get update ; apt-get install -y --no-install-recommends ca-certificates curl wget apt-transport-https tzdata \
     dumb-init iproute2 iputils-ping iputils-arping telnet less vim-tiny unzip gosu fonts-dejavu-core \
     net-tools socat netcat traceroute jq mtr-tiny \
-    cron logrotate runit rsyslog-kafka gosu bsdiff; \
+    cron logrotate runit rsyslog-kafka gosu bsdiff libtcnative-1 ; \
     groupmod -g 99 nogroup && groupadd -o -g 99 nobody  && usermod -u 99 -g 99 nobody && useradd -u 8080 -s /bin/bash -o java ; \
     mkdir -p ~/.pip && echo [global] > ~/.pip/pip.conf && echo "index-url = https://pypi.mirrors.ustc.edu.cn/simple" >> ~/.pip/pip.conf ;  \
     echo registry=http://npmreg.mirrors.ustc.edu.cn/ > ~/.npmrc ; \
