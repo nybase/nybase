@@ -7,7 +7,7 @@ RUN apt-get update ; apt-get install -y --no-install-recommends ca-certificates 
     net-tools socat netcat traceroute jq mtr-tiny dnsutils \
     cron logrotate runit rsyslog-kafka gosu bsdiff libtcnative-1 ; \
     groupmod -g 99 nogroup && groupadd -o -g 99 nobody  && usermod -u 99 -g 99 nobody && useradd -u 8080 -s /bin/bash -o java ; \
-    mkdir -p ~/.pip && echo [global] > ~/.pip/pip.conf && echo "index-url = https://pypi.mirrors.ustc.edu.cn/simple" >> ~/.pip/pip.conf ;  \
+    mkdir -p ~/.pip && echo [global] > ~/.pip/pip.conf && echo "index-url = https://pypi.tuna.tsinghua.edu.cn/simple" >> ~/.pip/pip.conf ;  \
     echo registry=http://npmreg.mirrors.ustc.edu.cn/ > ~/.npmrc ; \
     sed -i 's@ .*.ubuntu.com@ https://mirrors.ustc.edu.cn@g' /etc/apt/sources.list ;\
     sed -i '/session    required     pam_loginuid.so/c\#session    required   pam_loginuid.so' /etc/pam.d/cron ;\
